@@ -16,8 +16,6 @@ public class TwoSumSolution {
             for (int j = i+1; j <nums.length; j++) {
                 if ((nums[i]+nums[j])==target){
                     return new int[]{i,j};
-                }else {
-                    continue;
                 }
             }
         }
