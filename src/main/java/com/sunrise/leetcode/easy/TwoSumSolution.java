@@ -24,6 +24,40 @@ public class TwoSumSolution {
         return null;
     }
 
+    //hash 单循环法
+    public static int[] twoSumMap(int[] nums,int target){
+        Map<Integer, Integer> map = new HashMap<>();
+        //把target去减数组中的数，得到每一个剩余的值
+        //要判断这个剩余的值，是否在hash表中
+        //如果不在，就要把当前的数组的value和index 加入到表中
+        //存在的话，hash表中获取这个剩余值对应key的值
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                return new int[] { map.get(complement), i };
+            }
+            map.put(nums[i], i);
+        }
+        throw new IllegalArgumentException("No two sum solution");
+
+    }
+
+    //hash 双循环法
+    public static int[] twoSumMap2(int[] nums,int target){
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], i);
+        }
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement) && map.get(complement) != i) {
+                return new int[] { i, map.get(complement) };
+            }
+        }
+        throw new IllegalArgumentException("No two sum solution");
+
+    }
+
     //suck method
     public static int[] twosumSet(int[] nums, int target) {
         HashMap<Integer,Integer> hashMap = new HashMap<>();
@@ -49,7 +83,7 @@ public class TwoSumSolution {
         int[] nums = new int[]{2, 7, 11, 15};
         int target = 13;
 
-        int[] nums2 = new int[]{3, 2, 4};
+        int[] nums2 = new int[]{3,3, 2, 4};
         int target2 = 6;
 
         int[] twosum = twosum(nums2, target2);
@@ -62,6 +96,13 @@ public class TwoSumSolution {
         //map
         int[] twosumSet = twosumSet(nums2, target2);
         for (int num : twosumSet) {
+            System.out.println(num);
+
+        }
+
+        //map2
+        int[] twosumMap = twoSumMap(nums2, target2);
+        for (int num : twosumMap) {
             System.out.println(num);
 
         }
