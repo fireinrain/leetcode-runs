@@ -34,6 +34,7 @@ public class NumberOfTractsSolution {
         while (x > rev) {
             rev = rev * 10 + x % 10; //将低位一半的数取反。
             x = x / 10;
+            System.out.println("recv= "+rev+"  x= "+x);
         }
         //有rev >= x， 奇数情况下需要除去10
         return x == rev || x == (rev / 10);
@@ -59,7 +60,7 @@ public class NumberOfTractsSolution {
 
 
     public static void main(String[] args) {
-        int x = -121;
+        int x = 121;
         System.out.println(isPalindrome(x));
         System.out.println(isPalindrome2(x));
         System.out.println(isPalindrome3(x));
