@@ -16,6 +16,11 @@ import java.util.Arrays;
  */
 public class LongestCommonPrefixSolution {
 
+    // 思路：
+    // 找出最短的字符串
+    //循环最短字符串的每一个字符，和另外的字符串的字符比较，只要有一个不一样就返回
+    //否则就把字符保存
+    //最后返回
     public static String longestCommonPrefix(String[] strs) {
         if (strs.length<=0){
             return "";
@@ -48,9 +53,26 @@ public class LongestCommonPrefixSolution {
         return String.valueOf(stringBuilder);
     }
 
-    public static void main(String[] args) {
-        System.out.println(longestCommonPrefix(new String[]{"flower","flow","flight",""}));
 
+    public static String longestCommonPrefix2(String[] strs){
+        if (strs.length == 0) return "";
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++)
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) return "";
+            }
+        return prefix;
+
+    }
+
+    public static void main(String[] args) {
+        //是找前串，如果是中间的串就无能为力了
+        System.out.println(longestCommonPrefix(new String[]{"cflower","aflow","bflight"}));
+        System.out.println(longestCommonPrefix2(new String[]{"flower","flow","flight"}));
+
+
+        //数组有默认值
         char[] chars = new char[5];
         for (char c:chars){
             System.out.println((int)c);
