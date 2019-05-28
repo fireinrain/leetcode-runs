@@ -1,7 +1,4 @@
-package com.sunrise.leetcode.easy;
-
-import java.util.ArrayDeque;
-import java.util.ArrayList;
+package com.sunrise.leetcode.code.easy;
 
 /**
  * @description:

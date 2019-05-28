@@ -1,6 +1,4 @@
-package com.sunrise.leetcode.easy;
-
-import java.util.Arrays;
+package com.sunrise.leetcode.code.easy;
 
 /**
  * @description:

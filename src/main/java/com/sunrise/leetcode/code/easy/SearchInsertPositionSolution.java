@@ -1,4 +1,4 @@
-package com.sunrise.leetcode.easy;
+package com.sunrise.leetcode.code.easy;
 
 /**
  * @description: 题号：35

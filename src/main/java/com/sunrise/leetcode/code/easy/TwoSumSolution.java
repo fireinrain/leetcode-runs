@@ -1,4 +1,4 @@
-package com.sunrise.leetcode.easy;
+package com.sunrise.leetcode.code.easy;
 
 import java.util.HashMap;
 import java.util.Map;
